@@ -1,3 +1,5 @@
 Me llamo andres. 
 Le indicaremos a Git que queremos crear un nuevo repositorio para utilizar su sistema de control de versiones. Solo debemos posicionarnos en la carpeta raíz de nuestro proyecto y ejecutar el comando:
 Anita Platzi es una persona que contribuye a este proyecto open source y nació en Internet
+
+Experimento 1
