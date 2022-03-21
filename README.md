@@ -122,7 +122,7 @@ Recuerda que GitBash usa la ruta /c para dirigirse a C:\ (o /d para dirigirse a 
 - cd .. (cd + dos puntos): Regresar una carpeta hacia atrás.
 - Si quieres referirte al directorio en el que te encuentras ahora mismo puedes usar cd . (cd + un punto).
 - history: Ver los últimos comandos que ejecutamos y un número especial con el que podemos repetir su ejecución.
-- ! + número: Ejecutar algún comando con el número que nos muestra el comando history (por ejemplo, !72).
+    + ! + número: Ejecutar algún comando con el número que nos muestra el comando history (por ejemplo, !72).
 - clear: Para limpiar la terminal. También podemos usar los atajos de teclado Ctrl + L o Command + L.
 
 Todos estos comandos tiene una función de autocompletado, o sea, puedes escribir la primera parte y presionar la tecla Tab para que la terminal nos muestre todas las posibles carpetas o comandos que podemos ejecutar. Si presionas la tecla Arriba puedes ver el último comando que ejecutamos.
@@ -803,24 +803,24 @@ Al hacer un fork, GitHub sabe que se hizo el fork del proyecto, por lo que se le
 
 Cuando trabajas en un proyecto que existe en diferentes repositorios remotos (normalmente a causa de un fork), es muy probable que desees poder trabajar con ambos repositorios. Para esto, puedes generar un remoto adicional desde consola.
 
-<aside>
+```
     git remote add <nombre_del_remoto> <url_del_remoto> 
     git remote upstream https://github.com/freddier/hyperblog
-</aside>
+```
 
 Al crear un remoto adicional, podremos hacer pull desde el nuevo origen. En caso de tener permisos, podremos hacer fetch y push.
 
-<aside>
+```
     git pull <remoto> <rama>
     git pull upstream master
-</aside>
+```
 
 Este pull nos traerá los cambios del remoto, por lo que se estará al día en el proyecto. El flujo de trabajo cambia, en adelante se estará trabajando haciendo pull desde el upstream y push al origin para pasar a hacer pull request.
 
-<aside>
+```
     git pull upstream master
     git push origin master
-</aside>
+```
 
 + Para subir cambios al repositorio original:
     + Ubicar el repositorio del proyecto open source con el cual quiero colaborar.
@@ -855,16 +855,20 @@ En el siguiente ejemplo veremos cómo se realiza el deployment de un documento e
     + Copiar link en clone, elegir entre HTTPS o SSH del repositorio a contribuir.
         - En la carpeta deseada se clona el repositorio:
         
-<aside>
+```
     git clone url
     Deploy:
-</aside>
+```
 
     + Realizar cambios y commit en GitHub.
     + Traer al Repositorio local las actualizacion para el servidor en la capeta de los archivos del servidor.
 
-<aside>
+```
     git pull ramaRemota main
-</aside>
+```
 
 Nota: Siempre se debe proteger el archivo .git. Dependiendo del software para el servidor web, existen diferentes maneras. La conexión entre GitHub y el servidor se puede realizar mediante: Travis (pago) o Jenkis (Open source).
+
+# 📹 Video 32 - Ignorar archivos en el repositorio con .gitignore
+
+No todos los archivos que agregas a un proyecto deberían ir a un repositorio, por ejemplo cuando tienes un archivo donde están tus contraseñas que comúnmente tienen la extensión .env o cuando te estás conectando a una base de datos; son archivos que nadie debe ver.
